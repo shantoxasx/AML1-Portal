@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+	<style>
+		@keyframes typing {
+			from { width: 0; }
+		}
+		@keyframes blink-caret {
+			50% { border-color: transparent; }
+		}
+		#portal {
+			width: 200px;
+			white-space: nowrap;
+			overflow: hidden;
+			border-right: .15em solid orange;
+			animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+		}
+	.logo {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 100px; /* Adjust as needed */
+	height: auto;
+	z-index: 1000; /* Ensure the logo is on top */
+	opacity: 0; /* Start fully transparent */
+	animation: fadeIn 1s ease-in forwards; /* Animation name, duration, easing, and fill mode */
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+	</style>
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+		<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Edenred_Logo.svg/1200px-Edenred_Logo.svg.png" alt="Logo" class="logo">
+
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true"><span id="portal">AML1 Portal</span></label>
+				</form>
+			</div>
+
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button>Login</button>
+				</form>
+			</div>
+	</div>
+	<script>
+		document.getElementById('portal').addEventListener('animationend', function() {
+			this.style.borderRight = 'none';
+		});
+	</script>
+</body>
+</html>
